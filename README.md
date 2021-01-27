@@ -72,13 +72,13 @@
 
   The members of the team are as follows:
 
-  Frontend:
+  Front-end:
   * `Aditya Seshadri: Data Seed, Content, Web Design`
   * `Mohammed Arafat: Mockup, Presentation, Web Design, Concept of the App`
   * `Shawn Fok: Data Seed, Task List, Graphic Design, Web Design, Logo`
   
-  Backend:
-  * `Henry Logique: Development, Deployment, API, Database, Repository`
+  Back-end:
+  * `Henry Logique: Web Development, Heroku Deployment, API, Database, Repository`
   
 
   ## Questions
