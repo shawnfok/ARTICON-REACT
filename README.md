@@ -75,7 +75,7 @@
   Front-end:
   * `Aditya Seshadri: Data Seed, Content, Web Design`
   * `Mohammed Arafat: Mockup, Presentation, Web Design, Concept of the App`
-  * `Shawn Fok: Data Seed, Task List, Graphic Design, Web Design, Logo`
+  * `Shawn Fok: Content, Task List, Graphic Design, Web Design, Logo`
   
   Back-end:
   * `Henry Logique: Web Development, Heroku Deployment, API, Database, Repository`
