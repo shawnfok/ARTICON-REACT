@@ -8,7 +8,7 @@
    
    Some of the features of the app like updating the content of the showroom, announcing the winner of the hour and email generation to the winner of the contest are still in progress, and placeholders are included in the app. 
 
-   Our special thanks go to [Shama Hoque](https://github.com/shamahoque). This app is created based on her [merin-social](https://github.com/shamahoque/mern-socialcreated) app.
+   Our special thanks go to [Shama Hoque](https://github.com/shamahoque). This app is created based on her [merin-social](https://github.com/shamahoque/mern-skeleton) app.
   
 
   ## Table of Contents
