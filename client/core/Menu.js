@@ -2,29 +2,46 @@ import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import auth from './../auth/auth-helper'
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import logo1 from './../assets/images/articon_logo1.png'
+
+const isHome = (history, path) => {
+  if (history.location.pathname == path)
+    return {
+      font: '18px',
+      fontWeight: 'bold',
+      marginLeft: '15px',
+      color: '#c4a2f9'
+    }
+  else
+    return {
+      font: '18px',
+      fontWeight: 'bold',
+      marginLeft: '15px',
+      color: '#ffffff'
+    }
+}
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#ffa726'}
+    return { color: '#c4a2f9' }
   else
-    return {color: '#ffffff'}
+    return { color: '#ffffff' }
 }
-const Menu = withRouter(({history}) => (
+
+const Menu = withRouter(({ history }) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6" color="inherit">
-        ARTICON
+      <Typography variant="h5" color="inherit">
+        <img src={logo1} style={{ width: '24px', marginRight: '6px' }} />ARTICON
       </Typography>
       <Link to="/">
-        <IconButton aria-label="Home" style={isActive(history, "/")}>
-          <HomeIcon/>
-        </IconButton>
+        <Button style={isHome(history, "/")}>Home
+        </Button>
       </Link>
+
       {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">
@@ -37,14 +54,28 @@ const Menu = withRouter(({history}) => (
           </Link>
         </span>)
       }
+
       {
         auth.isAuthenticated() && (<span>
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
+
+        </span>)
+      }
+      {
+        auth.isAuthenticated() && (<span>
+          <Link to="/showroom/">
+            <Button style={isActive(history, "/showroom/")}>Showroom
+            </Button>
+          </Link>
+        </span>)
+      }
+      {
+        auth.isAuthenticated() && (<span>
           <Button color="inherit" onClick={() => {
-              auth.clearJWT(() => history.push('/'))
-            }}>Sign out</Button>
+            auth.clearJWT(() => history.push('/'))
+          }}>Sign out</Button>
         </span>)
       }
     </Toolbar>

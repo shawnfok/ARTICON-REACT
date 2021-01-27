@@ -1,6 +1,6 @@
 const create = async (params, credentials, post) => {
   try {
-    let response = await fetch('/api/posts/new/'+ params.userId, {
+    let response = await fetch('/api/posts/new/' + params.userId, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -9,14 +9,14 @@ const create = async (params, credentials, post) => {
       body: post
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
 
 const listByUser = async (params, credentials) => {
   try {
-    let response = await fetch('/api/posts/by/'+ params.userId, {
+    let response = await fetch('/api/posts/by/' + params.userId, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -25,14 +25,15 @@ const listByUser = async (params, credentials) => {
       }
     })
     return await response.json()
-  } catch(err) {
+    console.log(response.json())
+  } catch (err) {
     console.log(err)
   }
 }
 
 const listNewsFeed = async (params, credentials, signal) => {
   try {
-    let response = await fetch('/api/posts/feed/'+ params.userId, {
+    let response = await fetch('/api/posts/feed/' + params.userId, {
       method: 'GET',
       signal: signal,
       headers: {
@@ -40,9 +41,9 @@ const listNewsFeed = async (params, credentials, signal) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t
       }
-    })    
+    })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
@@ -58,7 +59,7 @@ const remove = async (params, credentials) => {
       }
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
@@ -73,10 +74,10 @@ const like = async (params, credentials, postId) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t
       },
-      body: JSON.stringify({userId:params.userId, postId: postId})
+      body: JSON.stringify({ userId: params.userId, postId: postId })
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
@@ -91,10 +92,10 @@ const unlike = async (params, credentials, postId) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t
       },
-      body: JSON.stringify({userId:params.userId, postId: postId})
+      body: JSON.stringify({ userId: params.userId, postId: postId })
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
@@ -109,10 +110,10 @@ const comment = async (params, credentials, postId, comment) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t
       },
-      body: JSON.stringify({userId:params.userId, postId: postId, comment: comment})
+      body: JSON.stringify({ userId: params.userId, postId: postId, comment: comment })
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
@@ -127,10 +128,10 @@ const uncomment = async (params, credentials, postId, comment) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + credentials.t
       },
-      body: JSON.stringify({userId:params.userId, postId: postId, comment: comment})
+      body: JSON.stringify({ userId: params.userId, postId: postId, comment: comment })
     })
     return await response.json()
-  } catch(err) {
+  } catch (err) {
     console.log(err)
   }
 }
