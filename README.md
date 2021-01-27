@@ -70,8 +70,6 @@
 
   ## Contributions
 
-  The members of the team are as follows:
-
   Front-end:
   * `Aditya Seshadri: Data Seed, Content, Web Design`
   * `Mohammed Arafat: Mockup, Presentation, Web Design, Concept of the App`
