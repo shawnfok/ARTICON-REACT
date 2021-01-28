@@ -41,25 +41,9 @@ const Menu = withRouter(({ history }) => (
         <Button style={isHome(history, "/")}>Home
         </Button>
       </Link>
-      {
-        auth.isAuthenticated() && (<React.Fragment>
-          <span>
-            <Link to={"/user/" + auth.isAuthenticated().user._id}>
-              <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
-            </Link>
-          </span>
-          <span>
-            <Link to="/showroom/">
-              <Button style={isActive(history, "/showroom/")}>Showroom
-            </Button>
-            </Link>
-          </span>
-        </React.Fragment>
-        )
-      }
       <div style={{ flexGrow: 1 }}></div>
       {
-        !auth.isAuthenticated() ? (<span>
+        !auth.isAuthenticated() && (<span>
           <Link to="/signup">
             <Button style={isActive(history, "/signup")}>Sign up
             </Button>
@@ -68,14 +52,31 @@ const Menu = withRouter(({ history }) => (
             <Button style={isActive(history, "/signin")}>Sign In
             </Button>
           </Link>
-        </span>) : (<React.Fragment>
-          <span>
-            <Button color="inherit" onClick={() => {
-              auth.clearJWT(() => history.push('/'))
-            }}>Sign out</Button>
-          </span>
-        </React.Fragment>
-          )
+        </span>)
+      }
+
+      {
+        auth.isAuthenticated() && (<span>
+          <Link to={"/user/" + auth.isAuthenticated().user._id}>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+          </Link>
+
+        </span>)
+      }
+      {
+        auth.isAuthenticated() && (<span>
+          <Link to="/showroom/">
+            <Button style={isActive(history, "/showroom/")}>Showroom
+            </Button>
+          </Link>
+        </span>)
+      }
+      {
+        auth.isAuthenticated() && (<span>
+          <Button color="inherit" onClick={() => {
+            auth.clearJWT(() => history.push('/'))
+          }}>Sign out</Button>
+        </span>)
       }
     </Toolbar>
   </AppBar>
