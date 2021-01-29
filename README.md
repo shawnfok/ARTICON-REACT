@@ -49,7 +49,7 @@
    
    On the `My Profile` page users can edit their profiles, like changing their names, and uploading their pictures and artworks. They can also view their posted comments and artwork, the artists they voted for and the artists who voted for them. Here they can also delete the atists they voted for. 
    
-   Next is the `Showroom` page, where a gallery of all submitted artworks to the `Cloudinary` server is presented. All artworks are labeled with the names of their artists. To upload artworks to the `Cloudinary` server, another React app is used. It created and stored secure URLs for all uploaded images on the `Cloudinary` server, which was used to display artworks in the `Showroom` page of this app.  
+   Next is the `Showroom` page, where a gallery of all submitted artworks to the `Cloudinary` server is presented. All artworks are labeled with the names of their artists. To upload artworks to the `Cloudinary` server, the [REACT-CLOUDINARY app](https://github.com/hjlogique/REACT-CLOUDINARY) is used. This app was created in conjuction with the `ARTICON-REACT` app. It uses `CLOUDINARY API` to create secure URLs and store them in database. These URLS are used to display artworks in the `Showroom` page of this app.  
 
    And finally users have the option to sign out.
 
