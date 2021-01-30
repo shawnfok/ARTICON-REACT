@@ -81,13 +81,13 @@
 
   ## Questions
   
-  [Link to my GitHub profile](https://github.com/hjlogique)
+  [Link to my GitHub profile](https://github.com/shawnfok)
 
   If you have any questions, please contact me via email:
   
-  Email: hjlogique@yahoo.com
+  Email: shawnfok@gmail.com
   
 
   ## License
   
-  MIT License.
+  MIT License
